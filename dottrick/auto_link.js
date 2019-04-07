@@ -87,7 +87,7 @@ const functionGetLocation = domain =>
     )
       .then(res => res.text())
       .then(text => {
-        resolve(src);
+        resolve(text);
       })
       .catch(err =>
         console.log(
