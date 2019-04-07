@@ -345,7 +345,7 @@ const domainIntern = ["aminudin.me", "pengangguran.me"];
             "Membuat Email..."
         );
 
-        if (register === 0) {
+        if (register.length === 2) {
           await console.log(
             "[" +
               " " +
