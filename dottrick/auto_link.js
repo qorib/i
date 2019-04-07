@@ -2,7 +2,7 @@ const fetch = require("node-fetch");
 const cheerio = require("cheerio");
 const delay = require("delay");
 const readline = require("readline-sync");
-const colors = require("./lib/colors");
+const colors = require("../lib/colors");
 const fs = require("async-file");
 const fss = require("fs");
 const { URLSearchParams } = require("url");
@@ -50,62 +50,54 @@ const functionGetMessages = (email, domain) =>
 
 const functionVerification = (email, token) =>
   new Promise((resolve, reject) => {
-    const params = new URLSearchParams();
-    params.append("email", email);
-    params.append("verification_code", token);
-
-    fetch("https://api.bigtoken.com/signup/email-verification", {
-      method: "POST",
-      body: params,
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/x-www-form-urlencoded ",
-        "Content-Length": 387,
-        Host: "api.bigtoken.com",
-        Connection: "Keep-Alive",
-        "Accept-Encoding": "gzip ",
-        "User-Agent": "okhttp/3.14.0"
+    fetch(
+      `https://xg3m9u4nn8.execute-api.us-east-2.amazonaws.com/big/api/v1/email-verification?email=${email}&token=${token}`,
+      {
+        method: "POST",
+        headers: { "x-api-key": `${apikey}` }
       }
-    })
+    )
       .then(res => res.text())
       .then(text => {
         resolve(text);
       })
-      .catch(err => reject(err));
+      .catch(err =>
+        console.log(
+          "[" +
+            " " +
+            moment().format("HH:mm:ss") +
+            " " +
+            "]" +
+            " " +
+            "Ada masalah sssSssstt..." +
+            err
+        )
+      );
   });
 
 const functionGetLocation = domain =>
   new Promise((resolve, reject) => {
-    const userAgent =
-      "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36";
-    const url = `${domain}`;
-
-    const _include_headers = function(body, response, resolveWithFullResponse) {
-      return {
-        headers: response.headers,
-        data: body,
-        finalUrl: response.request.uri.href // contains final URL
-      };
-    };
-
-    const options = {
-      uri: url,
-      followAllRedirects: true,
-      method: "get",
-      gzip: true,
-      transform: _include_headers,
-      headers: {
-        "User-Agent": userAgent
+    fetch(
+      `https://xg3m9u4nn8.execute-api.us-east-2.amazonaws.com/big/api/v1/get-location?url=${domain}`,
+      {
+        method: "POST",
+        headers: { "x-api-key": `${apikey}` }
       }
-    };
-
-    rp(options)
-      .then((response, error, html) => {
-        resolve(response.finalUrl);
+    )
+      .then(res => res.text())
+      .then(text => {
+        resolve(src);
       })
       .catch(err =>
         console.log(
-          "[" + " " + moment().format("HH:mm:ss") + " " + "]" + " " + "Done"
+          "[" +
+            " " +
+            moment().format("HH:mm:ss") +
+            " " +
+            "]" +
+            " " +
+            "Ada masalah sssSssstt..." +
+            err
         )
       );
   });

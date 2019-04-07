@@ -2,9 +2,8 @@ const fetch = require("node-fetch");
 const cheerio = require("cheerio");
 const delay = require("delay");
 const readline = require("readline-sync");
-const colors = require("./lib/colors");
+const colors = require("../lib/colors");
 const moment = require("moment");
-const JSON = require("circular-json");
 
 console.log("#####################");
 console.log("Panggil w Amin Tamvan");
