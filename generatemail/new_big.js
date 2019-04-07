@@ -414,11 +414,11 @@ const domainIntern = ["aminudin.me", "pengangguran.me"];
             console.log("");
           } else {
             const getLocation = await functionGetLocation(message);
-            // const decodeURL = await decodeURIComponent(getLocation);
+            const decodeURL = await decodeURIComponent(getLocation);
 
             const regex = await new RegExp(/\?(?:code)\=([\S\s]*?)\&/);
 
-            const resGex = await regex.exec(getLocation);
+            const resGex = await regex.exec(decodeURL);
 
             console.log(
               "[" +
