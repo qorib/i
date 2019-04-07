@@ -16,6 +16,7 @@ console.log("#####################");
 console.log("");
 console.log("");
 
+const apikey = readline.question("Masukan Api Key : ");
 const file = readline.question("Masukan nama file  : ");
 
 const DelaY = readline.question(

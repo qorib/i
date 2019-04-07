@@ -12,6 +12,7 @@ console.log("#####################");
 console.log("");
 console.log("");
 
+const apikey = readline.question("Masukan Api Key : ");
 const Reff = readline.question("Masukan Kode Referal : ");
 const EmaIl = readline.question("masukan alamat gmail : ");
 const DelaY = readline.question("Mau Berapa Lama (millisecond) : ");
@@ -21,27 +22,17 @@ console.log("");
 
 const functionRegister = email =>
   new Promise((resolve, reject) => {
-    const body = {
-      password: "Coegsekali1!",
-      monetize: true,
-      email: `${email}`,
-      referral_id: Reff
-    };
-
-    fetch("https://api.bigtoken.com/signup", {
-      method: "post",
-      body: JSON.stringify(body),
-      headers: {
-        Accept: "application/json",
-        Referer: "https://my.bigtoken.com/signup",
-        Origin: "https://my.bigtoken.com",
-        "X-Requested-With": "XMLHttpRequest",
-        "X-Srax-Big-Api-Version": 2,
-        "Content-Type": "application/json"
+    fetch(
+      `https://xg3m9u4nn8.execute-api.us-east-2.amazonaws.com/big/api/v1/register?email=${email}&Reff=${Reff}`,
+      {
+        method: "post",
+        headers: { "x-api-key": `${apikey}` }
       }
-    })
+    )
       .then(res => res.text())
-      .then(json => resolve(json.length))
+      .then(json => {
+        resolve(json);
+      })
       .catch(err => reject(err));
   });
 
@@ -95,22 +86,41 @@ const dotDot = [];
     await delay(DelaY);
 
     if (DotEmail.length !== 0 && DotEmail.length > 11) {
-      const regist = await functionRegister(DotEmail);
-      await delay(5000);
+      try {
+        const regist = await functionRegister(DotEmail);
+        await delay(5000);
+        if (regist.length > 5) {
+          console.log(regist);
+        }
 
-      if (regist > 10) {
-        console.log(
-          "[" +
-            " " +
-            moment().format("HH:mm:ss") +
-            " " +
-            "]" +
-            " " +
-            "EMAIL SUDAH TERDAFTAR :" +
-            " " +
-            DotEmail
-        );
-      } else {
+        if (regist > 10) {
+          console.log(
+            "[" +
+              " " +
+              moment().format("HH:mm:ss") +
+              " " +
+              "]" +
+              " " +
+              "EMAIL SUDAH TERDAFTAR :" +
+              " " +
+              DotEmail
+          );
+        } else {
+          console.log(
+            colors.FgGreen,
+            "[" +
+              " " +
+              moment().format("HH:mm:ss") +
+              " " +
+              "]" +
+              " " +
+              "BERHASIL REGIST :" +
+              " " +
+              DotEmail,
+            colors.Reset
+          );
+        }
+      } catch (e) {
         console.log(
           colors.FgGreen,
           "[" +
@@ -119,10 +129,8 @@ const dotDot = [];
             " " +
             "]" +
             " " +
-            "BERHASIL REGIST :" +
-            " " +
-            DotEmail,
-          colors.Reset
+            "ADA MASALAH... Mengulangi :" +
+            " "
         );
       }
     }
