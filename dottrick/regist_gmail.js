@@ -2,6 +2,7 @@ const fetch = require("node-fetch");
 const cheerio = require("cheerio");
 const delay = require("delay");
 const readline = require("readline-sync");
+const { URLSearchParams } = require("url");
 const colors = require("../lib/colors");
 const moment = require("moment");
 
