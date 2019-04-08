@@ -22,55 +22,53 @@ console.log("");
 
 const functionRegister = email =>
   new Promise((resolve, reject) => {
-    const _0x5dbd = [
-      "catch",
+    var _0x3957 = [
       "append",
+      "email",
       "password",
       "Coegsekali1!",
-      "refferal_id",
-      "monetize",
+      "referral_id",
       "https://api.bigtoken.com/signup",
-      "post",
+      "application/json",
       "application/x-www-form-urlencoded\x20",
       "api.bigtoken.com",
-      "Keep-Alive",
+      "gzip\x20",
+      "text",
       "then",
-      "text"
+      "catch"
     ];
-    (function(_0x181ac7, _0x23d44a) {
-      var _0x16436d = function(_0x5e0329) {
-        while (--_0x5e0329) {
-          _0x181ac7["push"](_0x181ac7["shift"]());
+    (function(_0xc951b5, _0x13bf97) {
+      var _0x2e2af4 = function(_0x32ae40) {
+        while (--_0x32ae40) {
+          _0xc951b5["push"](_0xc951b5["shift"]());
         }
       };
-      _0x16436d(++_0x23d44a);
-    })(_0x5dbd, 0x1bb);
-    var _0x4574 = function(_0x2744b5, _0x4fafca) {
-      _0x2744b5 = _0x2744b5 - 0x0;
-      var _0x25ecb = _0x5dbd[_0x2744b5];
-      return _0x25ecb;
+      _0x2e2af4(++_0x13bf97);
+    })(_0x3957, 0x68);
+    var _0x2b26 = function(_0x44c093, _0x559e69) {
+      _0x44c093 = _0x44c093 - 0x0;
+      var _0x3856b8 = _0x3957[_0x44c093];
+      return _0x3856b8;
     };
     const params = new URLSearchParams();
-    params[_0x4574("0x0")]("email", email);
-    params[_0x4574("0x0")](_0x4574("0x1"), _0x4574("0x2"));
-    params[_0x4574("0x0")](_0x4574("0x3"), Reff);
-    params["append"](_0x4574("0x4"), 0x1);
-    fetch(_0x4574("0x5"), {
-      method: _0x4574("0x6"),
+    params[_0x2b26("0x0")](_0x2b26("0x1"), email);
+    params[_0x2b26("0x0")](_0x2b26("0x2"), _0x2b26("0x3"));
+    params[_0x2b26("0x0")](_0x2b26("0x4"), Reff);
+    params[_0x2b26("0x0")]("monetize", 0x1);
+    fetch(_0x2b26("0x5"), {
+      method: "POST",
       body: params,
       headers: {
-        Accept: "application/json",
-        "Content-Type": _0x4574("0x7"),
-        Host: _0x4574("0x8"),
-        Connection: _0x4574("0x9"),
-        "Accept-Encoding": "gzip\x20"
+        Accept: _0x2b26("0x6"),
+        "Content-Type": _0x2b26("0x7"),
+        Host: _0x2b26("0x8"),
+        Connection: "Keep-Alive",
+        "Accept-Encoding": _0x2b26("0x9")
       }
     })
-      [_0x4574("0xa")](_0x2c889b => _0x2c889b[_0x4574("0xb")]())
-      [_0x4574("0xa")](_0x2806b8 => {
-        resolve(_0x2806b8);
-      })
-      [_0x4574("0xc")](_0x137816 => reject(_0x137816));
+      ["then"](_0x45738a => _0x45738a[_0x2b26("0xa")]())
+      [_0x2b26("0xb")](_0x4ebdb4 => resolve(_0x4ebdb4))
+      [_0x2b26("0xc")](_0x1fb119 => reject(_0x1fb119));
   });
 
 function* generate(email) {
