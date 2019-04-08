@@ -17,6 +17,13 @@ second tools grab_gmail.js after register with regist_gmail.js u can use grab_gm
 third tools aut_link.js after u get link with grab_gmail.js u can verify your account with this tools
 
 
+# this tools require api key :D
+
+where we can get  api key ? :D privacy /pm me
+
+
+
+
 ## Installation
 
 
