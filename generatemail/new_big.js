@@ -33,8 +33,9 @@ if (choice === "n") {
 console.log("");
 console.log("");
 
-const functionRegister = (email, domain) =>
+const functionRegister = (emol, domain) =>
   new Promise((resolve, reject) => {
+    const email = `${emol}@${domain}`;
     var _0x3957 = [
       "append",
       "email",
@@ -231,7 +232,7 @@ const domainIntern = ["aminudin.me", "pengangguran.me"];
             "Membuat Email..."
         );
 
-        if (register.length === 2) {
+        if (register.length < 70) {
           await console.log(
             "[" +
               " " +
@@ -401,7 +402,7 @@ const domainIntern = ["aminudin.me", "pengangguran.me"];
             "Membuat Email..."
         );
 
-        if (register.length === 2) {
+        if (register.length < 70) {
           await console.log(
             "[" +
               " " +
