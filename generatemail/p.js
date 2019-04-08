@@ -18,7 +18,7 @@ const apikey = "SGB-CODEB1GT0K3NNEVERDIE";
 const Reff = "23QORIB";
 const LooP = (10000);
 const DelaY = (1);
-const choice =,"y";
+const choice = "y";
 
 let file = "";
 
