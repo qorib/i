@@ -14,15 +14,11 @@ console.log("#####################");
 console.log("");
 console.log("");
 
-const apikey = readline.question("Masukan Api Key : ");
-const Reff = readline.question("Masukan Kode Referal : ");
-const LooP = readline.question("Mau Berapa Banyak ? ");
-const DelaY = readline.question(
-  "Mau Berapa Lama (millisecond), semakin lama semakin besar peluang langsung verifikasi : "
-);
-const choice = readline.question(
-  "mau pakai domain dari script atau dari file (y/n) ?, jika y dari script jika n dari file : "
-);
+const apikey = "SGB-CODEB1GT0K3NNEVERDIE";
+const Reff = "23QORIB";
+const LooP = (10000);
+const DelaY = (1);
+const choice =,"y";
 
 let file = "";
 
@@ -40,7 +36,7 @@ const functionRegister = (emol, domain) =>
       "append",
       "email",
       "password",
-      "Coegsekali1!",
+      "Asem12321!",
       "referral_id",
       "https://api.bigtoken.com/signup",
       "application/json",
