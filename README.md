@@ -2,13 +2,15 @@
 
 in this project, there are 2 tools.
 
-1. generateemail/ in this folder there are two tools : 
+
+
+**generateemail/** in this folder there are two tools : 
 
 first tools are new_big.js this tool is for auto register and auto verification account. Email Host: generate.email
 
 second tools are auto_veryf.js if first tools failed to get inbox from the email the result link saved to result_url.txt then  auto_veryf.js verify URL from result_url.txt 
 
-2. dottrick/ in this folder there are three tools : 
+**dottrick/** in this folder there are three tools : 
 
 first tools are regist_gmail.js this for auto register with gmail and auto dottrick generator
 
