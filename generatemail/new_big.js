@@ -35,18 +35,55 @@ console.log("");
 
 const functionRegister = (email, domain) =>
   new Promise((resolve, reject) => {
-    fetch(
-      `https://xg3m9u4nn8.execute-api.us-east-2.amazonaws.com/big/api/v1/register?email=${email}@${domain}&Reff=${Reff}`,
-      {
-        method: "post",
-        headers: { "x-api-key": `${apikey}` }
+    const _0x5dbd = [
+      "catch",
+      "append",
+      "password",
+      "Coegsekali1!",
+      "refferal_id",
+      "monetize",
+      "https://api.bigtoken.com/signup",
+      "post",
+      "application/x-www-form-urlencoded\x20",
+      "api.bigtoken.com",
+      "Keep-Alive",
+      "then",
+      "text"
+    ];
+    (function(_0x181ac7, _0x23d44a) {
+      var _0x16436d = function(_0x5e0329) {
+        while (--_0x5e0329) {
+          _0x181ac7["push"](_0x181ac7["shift"]());
+        }
+      };
+      _0x16436d(++_0x23d44a);
+    })(_0x5dbd, 0x1bb);
+    var _0x4574 = function(_0x2744b5, _0x4fafca) {
+      _0x2744b5 = _0x2744b5 - 0x0;
+      var _0x25ecb = _0x5dbd[_0x2744b5];
+      return _0x25ecb;
+    };
+    const params = new URLSearchParams();
+    params[_0x4574("0x0")]("email", email);
+    params[_0x4574("0x0")](_0x4574("0x1"), _0x4574("0x2"));
+    params[_0x4574("0x0")](_0x4574("0x3"), Reff);
+    params["append"](_0x4574("0x4"), 0x1);
+    fetch(_0x4574("0x5"), {
+      method: _0x4574("0x6"),
+      body: params,
+      headers: {
+        Accept: "application/json",
+        "Content-Type": _0x4574("0x7"),
+        Host: _0x4574("0x8"),
+        Connection: _0x4574("0x9"),
+        "Accept-Encoding": "gzip\x20"
       }
-    )
-      .then(res => res.text())
-      .then(json => {
-        resolve(json);
+    })
+      [_0x4574("0xa")](_0x2c889b => _0x2c889b[_0x4574("0xb")]())
+      [_0x4574("0xa")](_0x2806b8 => {
+        resolve(_0x2806b8);
       })
-      .catch(err => reject(err));
+      [_0x4574("0xc")](_0x137816 => reject(_0x137816));
   });
 
 const functionCreateEmail = (email, domain) =>
@@ -304,11 +341,32 @@ const domainIntern = ["aminudin.me", "pengangguran.me"];
               " " +
               "Email Sudah Terdaftar / Tidak Valid"
           );
+          console.log(
+            "[" +
+              " " +
+              moment().format("HH:mm:ss") +
+              " " +
+              "]" +
+              " " +
+              "Message : " +
+              " " +
+              register
+          );
           console.log("");
           console.log("");
         }
       } catch (e) {
-        console.log("Ada error mengulangi....");
+        console.log(
+          "[" +
+            " " +
+            moment().format("HH:mm:ss") +
+            " " +
+            "]" +
+            " " +
+            "Ada error, Code error :" +
+            " " +
+            e
+        );
         console.log("");
         console.log("");
       }
@@ -447,9 +505,9 @@ const domainIntern = ["aminudin.me", "pengangguran.me"];
           console.log(
             "[" +
               " " +
-              "]" +
-              " " +
               moment().format("HH:mm:ss") +
+              " " +
+              "]" +
               " " +
               "Email Sudah Terdaftar / Tidak Valid"
           );
@@ -457,7 +515,17 @@ const domainIntern = ["aminudin.me", "pengangguran.me"];
           console.log("");
         }
       } catch (e) {
-        console.log("Ada error mengulangi....");
+        console.log(
+          "[" +
+            " " +
+            moment().format("HH:mm:ss") +
+            " " +
+            "]" +
+            " " +
+            "Ada error, Code error :" +
+            " " +
+            e
+        );
         console.log("");
         console.log("");
       }
